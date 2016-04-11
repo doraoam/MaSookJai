@@ -20,3 +20,6 @@ C:\Users\Admin\Documents\MaSookJai\Temp\bin\Debug\UnityEngine.Networking.xml
 C:\Users\Admin\Documents\MaSookJai\obj\Debug\Assembly-CSharp.csprojResolveAssemblyReference.cache
 C:\Users\Admin\Documents\MaSookJai\obj\Debug\Assembly-CSharp.dll
 C:\Users\Admin\Documents\MaSookJai\obj\Debug\Assembly-CSharp.pdb
+C:\Users\SupraveeNil\Documents\GitHub\MaSookJai\obj\Debug\Assembly-CSharp.csprojResolveAssemblyReference.cache
+C:\Users\SupraveeNil\Documents\GitHub\MaSookJai\obj\Debug\Assembly-CSharp.dll
+C:\Users\SupraveeNil\Documents\GitHub\MaSookJai\obj\Debug\Assembly-CSharp.pdb

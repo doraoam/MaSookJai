@@ -323,47 +323,77 @@ public class Checker : MonoBehaviour {
     + tell can move or not */
     bool checkGivenMatch(int arrayPoint,int targetPoint)
     {
-        if (targetPoint - arrayPoint == 1)
+        int countChecker = 0;
+
+        while (countChecker < 4)
         {
-            if(targetPoint%Column < Column - 2)
+            if (targetPoint + 2 < Column * Row && countChecker == 0)
             {
                 if (gemsColor[arrayPoint] == gemsColor[targetPoint + 1] && gemsColor[arrayPoint] == gemsColor[targetPoint + 2])
                 {
                     return true;
                 }
+
+                if (arrayPoint - 2 > 0)
+                {
+                    if (gemsColor[targetPoint] == gemsColor[arrayPoint - 1] && gemsColor[targetPoint] == gemsColor[arrayPoint - 2])
+                    {
+                        return true;
+                    }
+                }
+                
             }
-        }
-        else if (arrayPoint - targetPoint == 1)
-        {
-            if (targetPoint % Column >= 2)
+            else if (targetPoint - 2 > 0 && countChecker == 1)
             {
                 if (gemsColor[arrayPoint] == gemsColor[targetPoint - 1] && gemsColor[arrayPoint] == gemsColor[targetPoint - 2])
                 {
                     return true;
                 }
+
+                if (arrayPoint + 2 < Column * Row)
+                {
+                    if (gemsColor[targetPoint] == gemsColor[arrayPoint + 1] && gemsColor[targetPoint] == gemsColor[arrayPoint + 2])
+                    {
+                        return true;
+                    }
+                }
+                
             }
-        }
-        else if (arrayPoint - targetPoint == Row)
-        {
-            if (targetPoint >= Row * 2)
+            else if (targetPoint - (Row * 2) >= 0 && countChecker == 2)
             {
                 if (gemsColor[arrayPoint] == gemsColor[targetPoint - Row] && gemsColor[arrayPoint] == gemsColor[targetPoint - (Row * 2)])
                 {
                     return true;
                 }
+
+                if (arrayPoint + (Row * 2) > 0)
+                {
+                    if (gemsColor[targetPoint] == gemsColor[arrayPoint + Row] && gemsColor[targetPoint] == gemsColor[arrayPoint + (Row * 2)])
+                    {
+                        return true;
+                    }
+                }
+                
             }
-        }
-        else if (targetPoint - arrayPoint == Row)
-        {
-            if (targetPoint < Row * (Row - 2))
+            else if (targetPoint + (Row * 2) < Column * Row && countChecker == 3)
             {
                 if (gemsColor[arrayPoint] == gemsColor[targetPoint + Row] && gemsColor[arrayPoint] == gemsColor[targetPoint + (Row * 2)])
                 {
                     return true;
                 }
-            }
-        }
 
+                if (arrayPoint - (Row * 2) >= 0)
+                {
+                    if (gemsColor[targetPoint] == gemsColor[arrayPoint - Row] && gemsColor[targetPoint] == gemsColor[arrayPoint - (Row * 2)])
+                    {
+                        return true;
+                    }
+                }
+                
+            }
+            countChecker++;
+        } 
+        
         return false;
     }
 
